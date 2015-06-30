@@ -1,0 +1,10 @@
+   Commands				Description
+----------------------------------------------------------------------------------------------------------------------
+git add <filename>  		Add one or more files to staging 
+git commit -m "Comment" 	Commit changes to head (but not yet to the remote repository)
+git diff  			View all the merge conflicts
+git init 
+git push origin <name>  	Send changes to the master branch of your remote repository
+git pull origin <name>
+git status  			List the files you've changed and those you still need to add or commit
+git branch  			List all the branches in your repo, and also tell you what branch you're currently in
