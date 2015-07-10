@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            function createRow()
+		{
+                        var task = document.getElementById("inputText");
+                        var table = document.getElementById("toDoTable");
+                        var table1 = document.getElementById("taskhist");
+ 			var row = document.createElement('tr');
+                        var row1 = document.createElement('tr');
+			var col1 = document.createElement('td');
+                        var col11 = document.createElement('td');
+			var col2 = document.createElement('td'); 
+                        var col21 = document.createElement('td');
+			var col3 = document.createElement('td'); 
+			row.appendChild(col1); 
+                        row1.appendChild(col11);
+			row.appendChild(col2); 
+                        row1.appendChild(col21);
+			row.appendChild(col3); 
+			col1.innerHTML = task.value; 
+                        col11.innerHTML = task.value; 
+			col2.innerHTML = '<input type="button" id="delButton" onclick="deleteRow(this)" value="X"></input>'; //
+                        col21.innerHTML = '<input type="button" id="delButton1" onclick="deleteRow(this)" value="X"></input>';
+			col3.innerHTML = '<input type="button" id="deButton" onclick="shiftToNext(this)" value="Y"></input>'; //
+			table.appendChild(row);
+                        table1.appendChild(row1);
+                        task.value="";
+                        addToLocalStorage("toDoList", col1.innerHTML);
+                }
+            function deleteRow(row)
+		{       
+			document.getElementById(row.parentNode.parentNode.parentNode.id).deleteRow(row.parentNode.parentNode.rowIndex);
+		}
+            function addToLocalStorage(Storage, data)
+		{
+			var tab = localStorage.getItem(Storage);
+			if(tab==null)
+			{
+				tab="";
+			}
+			tab = tab+data+",";
+			localStorage.setItem(Storage,tab);
+		} 
+            function shiftToNext(row)
+		{                  
+                    var rowNum = row.parentNode.parentNode.rowIndex;                    
+                    var text = (document.getElementById("toDoTable").rows[rowNum]).cells[0].innerHTML;                  
+		    var row = document.createElement('tr'); 
+		    var col1 = document.createElement('td'); 
+		    var col2 = document.createElement('td'); 
+		    row.appendChild(col1); 
+		    row.appendChild(col2); 
+		    col1.innerHTML = text; 
+		    col2.innerHTML = '<input type="button" id="delButton" onclick="deleteRow(this)" value="X"></input>'; 
+		    var table = document.getElementById("completedTable");
+		    table.appendChild(row);
+		    document.getElementById("toDoTable").deleteRow(rowNum);	
+		    addToLocalStorage("completedList", col1.innerHTML);
+                }
+                function viewhistory()
+                {
+                    var status=document.getElementById("history").style.visibility;
+                    if(status=="visible")
+                    {
+                        document.getElementById("history").style.visibility='hidden';
+                    }
+                    else
+                    {
+			document.getElementById("history").style.visibility='visible';
+                    }
+                }
+        </script>
+    </head>
+    <body>
+        <div style="background-color: black;height: 50px;width: 100%">
+            <h2 style="text-align: center;color: white"> To-Do Application </h2>
+        </div>
+        
+        <div style="background-color: wheat;width: 49%;height: 300px">
+        <input type="text" id="inputText">
+	<input type="button" id="inputButton" value="Add Task" onclick="createRow()">
+        <input type="button" id="inputButton" value="Show/Hide History" onclick="viewhistory()">
+        <table id="toDoTable">
+            <th>To Do List</th>
+	</table>
+        </div>
+        <div style="background-color: cornsilk;width: 49%;height: 300px">
+        <table id="completedTable">
+            <th>Completed Tasks</th>
+	</table>
+        </div>
+        <div id="history" style="background-color: graytext;width: 49%;height: 300px;visibility: hidden">        
+        <table id="taskhist">
+            <th>Task History</th>
+	</table>
+        </div>
+        
+        
+    </body>
+</html>
