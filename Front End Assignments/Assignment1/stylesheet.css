@@ -1,0 +1,48 @@
+.banner
+{
+    background-color: #a8a8a8;
+    text-align: center;
+    height: 200px;
+}
+.bantext
+{
+    font-weight: bold;
+    font-size: 35px;
+    font-family: sans-serif;
+    transform: translateY(200%);
+}
+.logo
+{
+    font-weight: bold;
+    font-size: 40px;
+    font-family: sans-serif;
+}
+.about
+{
+    font-size: 30px;
+    font-weight: 500;
+    
+    margin-top: 20px;
+    margin-bottom: 0px;
+
+    
+}
+.sub
+{
+    font-size: 20px;
+}
+.body
+{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.inner
+{
+    margin-left: 50px;
+}
+.press
+{
+    
+    margin-bottom: 0px;
+
+}
