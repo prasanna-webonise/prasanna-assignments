@@ -1,0 +1,120 @@
+body
+{
+    margin: 0;
+}
+header
+{
+    height: 50px;
+    background-color: #000000;
+    
+}
+.inner
+{
+    width: 940px;
+    height: 50px;
+    margin:0px auto; 
+}
+.logo
+{
+    height: 35px;
+    width: 140px;
+    background-color: #ff8000;    
+    display: block;
+    color: black;
+    font-family: sans-serif;
+    margin-top: 7.5px;
+    margin-left: 5px;
+}
+.banner
+{
+    height: 485px;
+    width: 100%;
+    background-color: #71c4ea;
+}
+.content
+{
+    width: 940px;
+    margin: 0 auto;
+}
+.h2 
+{
+    font-size: 36px;
+    color: #444444;
+    margin: 0px;    
+    padding-top: 64px;
+    padding-bottom: 70px;
+    text-align: center;
+    font-family: sans-serif;        
+}
+a
+{
+    color: #aaaaaa;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    float:left;
+}
+li
+{
+    float:left;    
+    padding-left: 50px;
+}
+.pass
+{
+    float:left;
+    clear:both;
+}
+ul
+{
+    list-style-type: none;
+    margin-top:0;
+    margin-top:0;
+    padding: 16.5px;
+}
+.clear {
+    clear: both;
+    height: 110px;
+}
+.test 
+{
+        width: 140px; 
+        height: 140px; 
+        background: #efefef; 
+        border-radius: 50%; 
+        display: block;
+}
+.pad 
+{
+    padding:0;
+    margin-right: 75px;
+    width: 140px;
+    font-size:18px;
+    font-family: sans-serif;
+    color:#888888;
+}
+footer
+{
+    height: 50px;
+    background-color: #ECECEC;
+}
+.foot 
+{
+    width: 940px;
+    height: 50px;
+    margin-left: 460px;
+    
+}
+.foottext 
+{
+    color: #ff8000;
+    font-size: 16px;
+}
+.foottext:hover
+{
+    color: #444444;
+}
+.circle 
+{
+    margin-top: 0px;
+    
+}
