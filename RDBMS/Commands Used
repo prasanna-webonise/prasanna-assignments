@@ -1,0 +1,43 @@
+1.create database assessment_mgmt_system;
+
+2.use assessment_mgmt_system;
+
+3.create table user ( id int auto_increment , username varchar(255) not null , pwd varchar(255) not null , utype boolean not null, primary key(id) );
+
+4.create table question_bank ( id int auto_increment , question varchar(255) NOT NULL,user_id int NOT NULL, primary key(id), foreign key(user_id) references user(id) );
+
+5.create table options ( id int auto_increment , options varchar(255) NOT NULL,is_correct boolean NOT NULL,question_bank_id int, primary key(id), foreign key(question_bank_id) references question_bank(id) );
+
+6.create table test(id int not null auto_increment,question_bank_id int not null,test_id int not null,primary key(id), foreign key(question_bank_id) references question_bank(id));
+
+7.create table answer_log(id int not null  auto_increment,test_id int not null,user_id int not null,question_bank_id int not null,time int not null,chosen_ans varchar(255), primary key(id),foreign key(test_id) references test(id),foreign key(user_id) references user(id),foreign key(question_bank_id) references question_bank(id));
+
+8.insert into user (username,pwd,utype) values ("Prasanna","webonise123#",1);
+
+9.insert into question_bank(question,user_id) values("Who is the prime minister of India ?",1);
+
+10.insert into options(options,is_correct,question_bank_id) values("Narendra Modi",1,1);
+
+11.insert into test(question_bank_id,test_id) values(1,1);
+
+12.insert into answer_log(test_id,user_id,time,chosen_ans) values(1,2,15,1);
+
+13.create view myview as select count(o.options) from options as o, answer_log as a,test as t where o.id=a.chosen_ans and t.id=a.test_id and o.is_correct=1 and a.user_id=2 and t.test_id=1 ;
+
+14.select * from myview;
+
+15.select u.username, u.id, q.question, o.options from user as u, options as o, answer_log as a, test as t,question_bank as q where o.id=a.chosen_ans and t.id=a.test_id and q.id=t.question_bank_id and t.test_id=1 and u.id=a.user_id and q.id=t.question_bank_id;.
+
+16.create view pivotview as select u.username,q.id questionId, u.id userID,t.test_id, q.question, o.options from user as u, options as o, answer_log as a, test as t,question_bank as q where o.id=a.chosen_ans and t.id=a.test_id and q.id=t.question_bank_id and u.id =2 and u.id=a.user_id and q.id=t.question_bank_id;
+
+17.select * from pivotview;
+
+18.SET @sql = NULL;
+
+19.select group_concat(distinct concat('max(if(td.questionId = ''',questionId,''',options,NULL)) as', quote(questionId))) into @sql from pivotview td;
+
+20. set @sql = concat('select userID,username,',@sql,' from pivotview td');
+
+21.prepare statement from @sql;
+
+22.execute statement;
