@@ -7,6 +7,10 @@ and open the template in the editor.
     Created on : 24 Jul, 2015, 6:29:38 PM
     Author     : webonise
 */
+* {
+    padding: 0;
+    margin: 0;
+}
 body {
     margin: 0;
 }
@@ -32,6 +36,9 @@ ul {
     float:left;
     margin-left: 20px;
 }
+header ul {
+    //padding-top:19px;
+}
 li {
     color:#000000;
     float:left;
@@ -41,10 +48,14 @@ li {
 }
 a {
     text-decoration: none;
-    color: #000000;
-    padding: 20px 0px;
+    color: #000000;    
+    display: block;
 }
-
+header a {
+    padding-top: 19px;
+    padding-bottom: 18px;
+    display: block;
+}
 .banner {
     background-color: black;   
 }
@@ -57,40 +68,47 @@ a {
 .banner h1 {
     color: #ffffff;
     font-size: 44px;
-    bottom: 60px;
-    left: 0px;
-    position: absolute;
 }
 .banner p {
     color: #ffffff;
     font-size: 22px;
-    left: 0px;
-    bottom: 0px;
+}
+.wrapper {
     position: absolute;
+    bottom: 30px;
+    left: 0px;
 }
 .menu {
     background-color: #ecab1f;
 }
 form {
-    margin-top: 15px;
+    margin-top: 8px;
     padding-top: 0px;
     float:right;
     border: solid;
     border-width: 1px;
     border-color: black;
-    border-radius: 2px;
-    width:200px;
-    height:20px;
+    border-radius: 5px;
+    width:240px;
+    height:40px;
+    display: inline-block;
 }
 .text {
     border: 0px;
     padding: 0px;
-    height: 20px;
+    height: 40px;
+    width:200px;
+    border-radius: 5px;
     float: left;    
 }
 .search {
-    height: 20px;
+    height:40px;
+    width:40px;
     float: right;
+    background: none;
+    background: url(search.png) no-repeat ;
+    border: none;
+    outline: none;
 }
 .box {
         width: 220px; 
@@ -126,13 +144,13 @@ form {
     padding-top: 20px;
     padding-left: 10px;
 }
-h1 {
+.happening h2 {
     color: #888888;
     font-size: 40px;
     font-family: sans-serif;
     padding-top: 60px;
     margin-top:0px;
-    margin-bottom: 0px;
+    margin-bottom: 15px;
 }
 .happening ul {
     padding-left: 0px;
@@ -164,4 +182,15 @@ h1 {
     display: block;
     padding-bottom: 15px;
     padding-left: 10px;
+}
+
+
+.arrow {
+    background: url(arrow.png) no-repeat;
+    width: 27px;
+    height: 28px;
+    display: block;
+    float: right;
+    margin-right: 10px;
+    margin-top: 16px;  
 }

@@ -1,31 +1,26 @@
+html, body, div,h1, h2, h3, h4, h5, h6, p,a,
+img,ol, ul, li,form, label,table, caption, tbody,
+tfoot, thead, tr, th, td,footer, header,menu,
+nav{
+	margin: 0;
+	padding: 0;
+}
+ol, ul {
+	list-style: none;
+}
 header {
     background-color: #000000;
     margin-bottom: 20px;
 }
-/*.logo {
-    //height: 55px;
-    //width: 135px;
-    float:left;
-    font-size: 25px;
-    color: #888888;
-    box-sizing: border-box;
+.clear {
+    margin-bottom: 0;
 }
-a {
-    text-decoration: none;
-    //color: #888888;
+.border {
+    padding-bottom: 40px;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: gainsboro;
 }
-.logo:hover
-{
-    text-decoration: none;
-    color: #888888;
+footer p {
+    padding-top: 20px;
 }
-li {
-    list-style: none;
-    float: left;
-    margin-left: 20px;
-}
-.inp
-{
-    //width: 50px;
-}
-*/
